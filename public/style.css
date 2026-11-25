@@ -1,0 +1,30 @@
+:root { --bg:#f5f7fb; --card:#fff; --text:#1f2937; --muted:#6b7280; --primary:#4f46e5; --line:#e5e7eb; }
+* { box-sizing: border-box; }
+body { margin:0; min-height:100vh; font-family:-apple-system,"Segoe UI","Noto Sans KR",sans-serif; background:var(--bg); color:var(--text); }
+header { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; }
+h1 { margin:0; font-size:1.2rem; letter-spacing:.08em; }
+main { max-width:640px; margin:0 auto; padding:24px 20px 60px; text-align:center; }
+h2 { font-size:1.6rem; margin:40px 0 28px; }
+[hidden] { display:none !important; }
+button { font:inherit; cursor:pointer; border-radius:12px; border:1px solid var(--line); padding:10px 16px; background:var(--card); color:var(--text); }
+button:disabled { opacity:.5; cursor:not-allowed; }
+.ghost:hover { background:#eef0f6; }
+.primary { background:var(--primary); color:#fff; border-color:var(--primary); }
+.danger { color:#dc2626; border-color:#fecaca; }
+.votes { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.vote { display:flex; flex-direction:column; align-items:center; gap:8px; padding:24px 8px; font-size:2.6rem; box-shadow:0 2px 8px rgba(0,0,0,.05); transition:transform .1s; }
+.vote span { font-size:1rem; }
+.vote:hover:not(:disabled) { transform:translateY(-3px); border-color:var(--primary); }
+.msg { min-height:1.5em; margin-top:20px; color:var(--primary); font-weight:600; }
+.msg.error { color:#dc2626; }
+form { display:flex; flex-direction:column; gap:10px; max-width:320px; margin:0 auto; }
+input { font:inherit; padding:12px; border:1px solid var(--line); border-radius:12px; }
+.total { color:var(--muted); font-size:1.1rem; }
+.total strong { color:var(--text); font-size:1.6rem; }
+.row { display:grid; grid-template-columns:90px 1fr 90px; gap:10px; align-items:center; margin:14px 0; text-align:left; }
+.track { background:var(--line); border-radius:8px; height:26px; overflow:hidden; }
+.fill { height:100%; width:0; border-radius:8px; transition:width .4s; }
+.satisfied .fill { background:#22c55e; } .neutral .fill { background:#f59e0b; } .dissatisfied .fill { background:#ef4444; }
+.row .val { text-align:right; font-size:.9rem; color:var(--muted); }
+.actions { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:28px; }
+@media (max-width:480px) { .row { grid-template-columns:70px 1fr 70px; } .vote { font-size:2.1rem; } }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLASS FEEDBACK</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>CLASS FEEDBACK</h1>
+  <button id="adminBtn" class="ghost">관리자 로그인</button>
+</header>
+
+<main>
+  <section id="student">
+    <h2>오늘 수업은 어땠나요?</h2>
+    <div class="votes">
+      <button class="vote" data-rating="satisfied">😊<span>만족</span></button>
+      <button class="vote" data-rating="neutral">😐<span>보통</span></button>
+      <button class="vote" data-rating="dissatisfied">😞<span>불만족</span></button>
+    </div>
+    <p id="studentMsg" class="msg" role="status"></p>
+  </section>
+
+  <section id="login" hidden>
+    <h2>관리자 로그인</h2>
+    <form id="loginForm">
+      <input id="email" type="email" placeholder="이메일" required autocomplete="username">
+      <input id="password" type="password" placeholder="비밀번호" required autocomplete="current-password">
+      <button type="submit" class="primary">로그인</button>
+      <button type="button" id="cancelLogin" class="ghost">취소</button>
+    </form>
+    <p id="loginMsg" class="msg error" role="status"></p>
+  </section>
+
+  <section id="admin" hidden>
+    <h2>수업 만족도 결과</h2>
+    <p class="total">전체 투표 수 <strong id="total">0</strong>표</p>
+    <div id="bars"></div>
+    <div class="actions">
+      <button id="refresh" class="ghost">새로고침</button>
+      <button id="reset" class="danger">투표 결과 초기화</button>
+      <button id="logout" class="ghost">로그아웃</button>
+    </div>
+    <p id="adminMsg" class="msg" role="status"></p>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
